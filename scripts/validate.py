@@ -4,7 +4,11 @@ import os
 import re
 
 ROOT = Path(__file__).parents[1]
-default_contracts = ROOT.parent / "book-reference-benchmark" / "benchmarks/art-of-time-and-war"
+default_candidates = [
+    ROOT / "benchmarks/art-of-time-and-war",
+    ROOT.parent / "book-reference-benchmark" / "benchmarks/art-of-time-and-war",
+]
+default_contracts = next((path for path in default_candidates if path.exists()), default_candidates[0])
 contracts = Path(os.environ.get("BENCHMARK_ROOT", default_contracts))
 worksheets = ROOT / "worksheets"
 
