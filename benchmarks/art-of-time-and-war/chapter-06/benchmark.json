@@ -1,0 +1,558 @@
+{
+  "id": "art-of-time-and-war.chapter-06.v0",
+  "book": {
+    "title": "The Art of Time and War",
+    "author": "Leo Guinan",
+    "reference_layer": "chapter-06"
+  },
+  "chapter": {
+    "number": 6,
+    "title": "The Edge of the Map"
+  },
+  "source": {
+    "path": "../full-book/chapter-06.txt",
+    "status": "omitted_public_projection",
+    "sha256": "314845174984bec612acdfa9abc9605e809e1d2f5e9aa0f87dbef9c16c470845",
+    "origin": "private manuscript source (omitted from public projection)",
+    "extraction": "Source text is intentionally omitted from the public projection; hash retained for provenance."
+  },
+  "protocol": {
+    "teacher_must_cite_context": true,
+    "teacher_context_rule": "Every teacher claim must include an exact quote and span_id from the supplied chapter context.",
+    "student_receives_teacher_packet_only": true,
+    "student_task": "Start from the cited teacher context and connect it to a new implication, example, or question.",
+    "scoring": {
+      "teacher_grounding": "mechanical exact-span gate",
+      "student_grounded_start": "mechanical citation carry-forward gate",
+      "student_connection": "judge required; do not reduce to keyword overlap",
+      "book_specificity": "judge required; distinguish chapter-derived insight from generic advice"
+    }
+  },
+  "experiment": {
+    "primary_question": "shared_external_representation",
+    "framing": "The book is a shared translation interface between differently capable models, not merely a source of transferred teacher knowledge.",
+    "causal_chain": [
+      "author_or_domain_knowledge",
+      "book_chapter",
+      "teacher_interpretation",
+      "student_understanding"
+    ],
+    "primary_comparison": "book_mediated_teaching - teacher_only"
+  },
+  "conditions": [
+    {
+      "id": "baseline",
+      "student_access": [
+        "objectives"
+      ],
+      "teacher_access": [],
+      "purpose": "existing student knowledge"
+    },
+    {
+      "id": "book_only",
+      "student_access": [
+        "book",
+        "objectives"
+      ],
+      "teacher_access": [],
+      "purpose": "direct instructional value of the book"
+    },
+    {
+      "id": "teacher_only",
+      "student_access": [
+        "objectives"
+      ],
+      "teacher_access": [
+        "objectives",
+        "student_responses"
+      ],
+      "purpose": "teacher prior knowledge and explanation ability"
+    },
+    {
+      "id": "book_mediated_teaching",
+      "student_access": [
+        "book",
+        "objectives"
+      ],
+      "teacher_access": [
+        "book",
+        "objectives",
+        "student_responses"
+      ],
+      "purpose": "book as shared translation interface"
+    },
+    {
+      "id": "asymmetric_reference",
+      "student_access": [
+        "objectives"
+      ],
+      "teacher_access": [
+        "book",
+        "objectives",
+        "student_responses"
+      ],
+      "purpose": "teacher source value without a shared reference frame"
+    }
+  ],
+  "learning_objectives": [
+    {
+      "id": "obj-06-core",
+      "target": "Use boundary-aware reasoning to attack a falsifiable edge without overclaiming what public traces establish.",
+      "source_spans": [
+        "ch06-s01",
+        "ch06-s02"
+      ],
+      "measures": [
+        "recognition",
+        "explanation",
+        "application",
+        "discrimination",
+        "transfer"
+      ]
+    }
+  ],
+  "evaluation": {
+    "pretest": {
+      "required": true,
+      "purpose": "measure baseline knowledge before exposure or teaching"
+    },
+    "held_out": {
+      "required": true,
+      "purpose": "test novel examples rather than chapter wording or examples"
+    },
+    "dimensions": [
+      "recognition",
+      "explanation",
+      "application",
+      "discrimination",
+      "transfer"
+    ],
+    "scoring_layers": [
+      "mechanical_protocol",
+      "semantic_judge"
+    ],
+    "semantic_judge_status": "not_run"
+  },
+  "evaluation_items": {
+    "pretest": [
+      {
+        "id": "ch06-pre-01",
+        "dimension": "baseline",
+        "prompt": "Before reading, what can a public similarity or engagement signal establish, and what can it not establish?"
+      }
+    ],
+    "held_out": [
+      {
+        "id": "ch06-held-01",
+        "dimension": "recognition",
+        "prompt": "State the chapter’s weak-point doctrine for research claims."
+      },
+      {
+        "id": "ch06-held-02",
+        "dimension": "explanation",
+        "prompt": "Explain why proximity, separation, or attention does not prove private identity or inner state."
+      },
+      {
+        "id": "ch06-held-03",
+        "dimension": "application",
+        "prompt": "A corpus shows a measurable stylistic neighborhood but no authenticated author. What claim is defensible?"
+      },
+      {
+        "id": "ch06-held-04",
+        "dimension": "discrimination",
+        "prompt": "Distinguish a narrow falsifiable claim from an attractive but unsupported identity claim."
+      },
+      {
+        "id": "ch06-held-05",
+        "dimension": "transfer",
+        "prompt": "Apply the edge-of-the-map principle to a public dataset and name the privacy or evidence boundary that must remain intact."
+      }
+    ],
+    "session_forms": [
+      [
+        {
+          "id": "ch06-s1-recognition",
+          "dimension": "recognition",
+          "prompt": "State the chapter’s weak-point doctrine for research claims."
+        },
+        {
+          "id": "ch06-s1-explanation",
+          "dimension": "explanation",
+          "prompt": "Explain why proximity, separation, or attention does not prove private identity or inner state."
+        },
+        {
+          "id": "ch06-s1-application",
+          "dimension": "application",
+          "prompt": "A corpus shows a measurable stylistic neighborhood but no authenticated author. What claim is defensible?"
+        },
+        {
+          "id": "ch06-s1-discrimination",
+          "dimension": "discrimination",
+          "prompt": "Distinguish a narrow falsifiable claim from an attractive but unsupported identity claim."
+        },
+        {
+          "id": "ch06-s1-transfer",
+          "dimension": "transfer",
+          "prompt": "Apply the edge-of-the-map principle to a public dataset and name the privacy or evidence boundary that must remain intact."
+        }
+      ],
+      [
+        {
+          "id": "ch06-s2-recognition",
+          "dimension": "recognition",
+          "prompt": "Identify the chapter’s weak-point doctrine for research claims."
+        },
+        {
+          "id": "ch06-s2-explanation",
+          "dimension": "explanation",
+          "prompt": "Why does the chapter why proximity, separation, or attention does not prove private identity or inner state."
+        },
+        {
+          "id": "ch06-s2-application",
+          "dimension": "application",
+          "prompt": "Suppose corpus shows a measurable stylistic neighborhood but no authenticated author. What claim is defensible?"
+        },
+        {
+          "id": "ch06-s2-discrimination",
+          "dimension": "discrimination",
+          "prompt": "Distinguish a narrow falsifiable claim from an attractive but unsupported identity claim."
+        },
+        {
+          "id": "ch06-s2-transfer",
+          "dimension": "transfer",
+          "prompt": "Apply the edge-of-the-map principle to a public dataset and name the privacy or evidence boundary that must remain intact."
+        }
+      ],
+      [
+        {
+          "id": "ch06-s3-recognition",
+          "dimension": "recognition",
+          "prompt": "Summarize the chapter’s weak-point doctrine for research claims."
+        },
+        {
+          "id": "ch06-s3-explanation",
+          "dimension": "explanation",
+          "prompt": "What mechanism does the chapter describe when it says why proximity, separation, or attention does not prove private identity or inner state."
+        },
+        {
+          "id": "ch06-s3-application",
+          "dimension": "application",
+          "prompt": "A corpus shows a measurable stylistic neighborhood but no authenticated author. What claim is defensible?"
+        },
+        {
+          "id": "ch06-s3-discrimination",
+          "dimension": "discrimination",
+          "prompt": "Distinguish a narrow falsifiable claim from an attractive but unsupported identity claim."
+        },
+        {
+          "id": "ch06-s3-transfer",
+          "dimension": "transfer",
+          "prompt": "Transfer the edge-of-the-map principle to a public dataset and name the privacy or evidence boundary that must remain intact."
+        }
+      ]
+    ],
+    "final_check": [
+      {
+        "id": "ch06-final-01",
+        "dimension": "recognition",
+        "prompt": "State the chapter's weak-point doctrine for research claims."
+      },
+      {
+        "id": "ch06-final-02",
+        "dimension": "explanation",
+        "prompt": "Explain why proximity, separation, or attention does not prove private identity or inner state."
+      },
+      {
+        "id": "ch06-final-03",
+        "dimension": "application",
+        "prompt": "A corpus shows a measurable stylistic neighborhood but no authenticated author. What claim is defensible?"
+      },
+      {
+        "id": "ch06-final-04",
+        "dimension": "discrimination",
+        "prompt": "Distinguish a narrow falsifiable claim from an attractive but unsupported identity claim."
+      },
+      {
+        "id": "ch06-final-05",
+        "dimension": "transfer",
+        "prompt": "Apply the edge-of-the-map principle to a public dataset and name the privacy or evidence boundary that must remain intact."
+      }
+    ]
+  },
+  "passage_only_protocol": {
+    "teacher_output": "ordered_passage_ids_only",
+    "min_passages": 1,
+    "max_passages": 3,
+    "system_retrieval": true,
+    "student_receives_ids": false,
+    "allowed_controls": [
+      "ordered",
+      "shuffled",
+      "reverse",
+      "random"
+    ],
+    "same_selection_across_order_controls": true,
+    "code_channel_controls": [
+      "fixed_selection_length",
+      "distinct_ids",
+      "equal_inventory",
+      "no_duplicate_signals"
+    ],
+    "invalid_selection_state": "teacher_protocol_failure",
+    "interpretation": "measure semantic routing, not teacher explanation"
+  },
+  "routing_conditions": [
+    {
+      "id": "passage_only_ordered",
+      "mode": "ordered",
+      "purpose": "teacher-selected sequence"
+    },
+    {
+      "id": "passage_only_shuffled",
+      "mode": "shuffled",
+      "purpose": "same passages with altered order"
+    },
+    {
+      "id": "passage_only_reverse",
+      "mode": "reverse",
+      "purpose": "same passages in reverse order"
+    },
+    {
+      "id": "random_passages",
+      "mode": "random",
+      "purpose": "equal-count passages without teacher routing"
+    }
+  ],
+  "session_protocol": {
+    "purpose": "measure how many back-and-forth teaching sessions are required for stable held-out understanding",
+    "turns_per_session": [
+      "teacher",
+      "student",
+      "judge"
+    ],
+    "min_sessions": 2,
+    "max_sessions": 6,
+    "teacher_budget": {
+      "interventions_per_session": 1,
+      "must_reorient": true,
+      "must_cite_when_book_access": true
+    },
+    "student_budget": {
+      "answers_per_session": 5,
+      "may_reference_book_when_access_is_granted": true
+    },
+    "evaluation_schedule": {
+      "session_forms": "evaluation_items.session_forms",
+      "fresh_form_per_session": true,
+      "fresh_context_baseline": "evaluation_items.session_forms[-1]",
+      "final_check": "evaluation_items.final_check",
+      "final_check_passages": [],
+      "final_check_requires_reconstruction": true,
+      "restoration_budgets": [
+        "one_exact_passage",
+        "passage_addresses_only",
+        "short_quotation",
+        "own_prior_summary",
+        "full_ordered_route"
+      ]
+    },
+    "judge": {
+      "independent": true,
+      "must_score_each_session": true,
+      "semantic_judge_status": "not_run"
+    },
+    "convergence": {
+      "score_scale": "0-5",
+      "dimensions": [
+        "recognition",
+        "explanation",
+        "application",
+        "discrimination",
+        "transfer"
+      ],
+      "threshold": 4,
+      "patience": 2,
+      "minimum_sessions_before_stop": 2,
+      "require_all_dimensions": true,
+      "require_held_out_completion": true
+    },
+    "failure_state": "not_converged_by_n",
+    "session_receipt_fields": [
+      "session_number",
+      "teacher_turn",
+      "student_turn",
+      "judge_turn",
+      "scores",
+      "misconceptions",
+      "citations",
+      "reorientation_target",
+      "converged"
+    ]
+  },
+  "teaching_trace": {
+    "required_events": [
+      "diagnosis",
+      "passage_selection",
+      "translation",
+      "correction"
+    ],
+    "metrics": [
+      "intervention_tokens",
+      "passage_reuse",
+      "diagnostic_accuracy",
+      "durable_student_improvement"
+    ],
+    "required_citation": true
+  },
+  "specialist_extension": {
+    "status": "planned",
+    "novel_domain_required": true,
+    "teacher_profiles": [
+      "generalist",
+      "specialist",
+      "oracle",
+      "false_specialist"
+    ],
+    "purpose": "separate general capability from local epistemic advantage and distinguish elicitation, translation, and acquisition"
+  },
+  "matrix": {
+    "directions": [
+      "large_teacher_to_small_student",
+      "small_teacher_to_small_student",
+      "large_teacher_to_large_student"
+    ],
+    "teacher_models": [
+      {
+        "id": "deepseek/deepseek-v4-pro",
+        "provider": "deepseek",
+        "tier": "large",
+        "prompt_per_token": 4.35e-07,
+        "completion_per_token": 8.7e-07
+      },
+      {
+        "id": "~google/gemini-pro-latest",
+        "provider": "google",
+        "tier": "large",
+        "prompt_per_token": 2e-06,
+        "completion_per_token": 1.2e-05
+      },
+      {
+        "id": "openai/gpt-5.4",
+        "provider": "openai",
+        "tier": "large",
+        "prompt_per_token": 2.5e-06,
+        "completion_per_token": 1.5e-05
+      },
+      {
+        "id": "~anthropic/claude-sonnet-latest",
+        "provider": "anthropic",
+        "tier": "large",
+        "prompt_per_token": 2e-06,
+        "completion_per_token": 1e-05
+      },
+      {
+        "id": "deepseek/deepseek-v4-flash",
+        "provider": "deepseek",
+        "tier": "small",
+        "prompt_per_token": 9.38e-08,
+        "completion_per_token": 1.876e-07
+      },
+      {
+        "id": "~google/gemini-flash-latest",
+        "provider": "google",
+        "tier": "small",
+        "prompt_per_token": 1.5e-06,
+        "completion_per_token": 7.5e-06
+      },
+      {
+        "id": "openai/gpt-5.4-mini",
+        "provider": "openai",
+        "tier": "small",
+        "prompt_per_token": 7.5e-07,
+        "completion_per_token": 4.5e-06
+      },
+      {
+        "id": "~anthropic/claude-haiku-latest",
+        "provider": "anthropic",
+        "tier": "small",
+        "prompt_per_token": 1e-06,
+        "completion_per_token": 5e-06
+      }
+    ],
+    "student_models": [
+      {
+        "id": "deepseek/deepseek-v4-pro",
+        "provider": "deepseek",
+        "tier": "large",
+        "prompt_per_token": 4.35e-07,
+        "completion_per_token": 8.7e-07
+      },
+      {
+        "id": "~google/gemini-pro-latest",
+        "provider": "google",
+        "tier": "large",
+        "prompt_per_token": 2e-06,
+        "completion_per_token": 1.2e-05
+      },
+      {
+        "id": "openai/gpt-5.4",
+        "provider": "openai",
+        "tier": "large",
+        "prompt_per_token": 2.5e-06,
+        "completion_per_token": 1.5e-05
+      },
+      {
+        "id": "~anthropic/claude-sonnet-latest",
+        "provider": "anthropic",
+        "tier": "large",
+        "prompt_per_token": 2e-06,
+        "completion_per_token": 1e-05
+      },
+      {
+        "id": "deepseek/deepseek-v4-flash",
+        "provider": "deepseek",
+        "tier": "small",
+        "prompt_per_token": 9.38e-08,
+        "completion_per_token": 1.876e-07
+      },
+      {
+        "id": "~google/gemini-flash-latest",
+        "provider": "google",
+        "tier": "small",
+        "prompt_per_token": 1.5e-06,
+        "completion_per_token": 7.5e-06
+      },
+      {
+        "id": "openai/gpt-5.4-mini",
+        "provider": "openai",
+        "tier": "small",
+        "prompt_per_token": 7.5e-07,
+        "completion_per_token": 4.5e-06
+      },
+      {
+        "id": "~anthropic/claude-haiku-latest",
+        "provider": "anthropic",
+        "tier": "small",
+        "prompt_per_token": 1e-06,
+        "completion_per_token": 5e-06
+      }
+    ],
+    "pricing_source": "OpenRouter /api/v1/models queried 2026-07-25; aliases retained where OpenRouter exposes latest routing.",
+    "note": "Large/small are cost-and-capacity labels for this run, not capability claims. Each direction runs every model in the selected teacher tier against every model in the selected student tier."
+  },
+  "tasks": [
+    {
+      "id": "ch06-ground-and-connect-001",
+      "type": "ground_then_connect",
+      "question": "Use boundary-aware reasoning to attack a falsifiable edge without overclaiming what public traces establish.",
+      "context_policy": "Retrieve 2-4 adjacent spans from Chapter 6; teacher may use only those spans.",
+      "student_policy": "Student receives the teacher JSON packet and the question, but not the chapter text.",
+      "judge_dimensions": [
+        "faithfulness",
+        "book_specificity",
+        "quality_of_connection",
+        "uncertainty_honesty"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Generational response artifact",
+  "type": "object",
+  "required": [
+    "lineage_id",
+    "generation",
+    "condition",
+    "artifact_type",
+    "budget_tokens",
+    "text",
+    "canonical_invariants",
+    "known_limits",
+    "creation_cost",
+    "fidelity"
+  ],
+  "properties": {
+    "lineage_id": {"type": "string", "minLength": 1},
+    "generation": {"type": "integer", "minimum": 0},
+    "parent_artifact_id": {"type": ["string", "null"]},
+    "condition": {
+      "enum": [
+        "canonical_only",
+        "direct_inheritance",
+        "cumulative_inheritance",
+        "selected_inheritance",
+        "corrupted_inheritance",
+        "bookless_inheritance"
+      ]
+    },
+    "chapter_scope": {"type": "array", "items": {"type": "string"}},
+    "artifact_type": {"enum": ["summary", "route", "repair_guide", "hybrid"]},
+    "budget_tokens": {"type": "integer", "minimum": 1},
+    "text": {"type": "string", "minLength": 1},
+    "canonical_invariants": {"type": "array", "items": {"type": "string"}},
+    "known_limits": {"type": "array", "items": {"type": "string"}},
+    "creation_cost": {"type": "object"},
+    "fidelity": {"type": "object"}
+  },
+  "additionalProperties": true
+}
